@@ -20,7 +20,7 @@ class Setting {
   @Column()
   chat: boolean;
 
-  @CreateDateColumn()
+  @UpdateDateColumn()
   updated_at: Date;
 
   @CreateDateColumn()
