@@ -1,28 +1,14 @@
+// Imports
 import express, { response } from "express";
 
 import "./database";
+import { routes } from "./routes";
 
 const app = express();
+// App usage's
+app.use(express.json());
 
-/**
- * Métodos padrão
- * GET -> Buscas
- * POST -> Criaçào
- * PUT ->Alteração
- * DELETE -> Deletar
- * PATCH -> Alterar uma informaçào especifica
- */
+app.use(routes);
 
-app.get("/", (request, response) => {
-  return response.json({
-    message: "Salve putada",
-  });
-});
-
-app.post("/", (resquest, repsonse) => {
-  return response.json({
-    message: "Usuário Salvo",
-  });
-});
-
+//Listen
 app.listen(3333, () => console.log("Server is running on port 3333"));
